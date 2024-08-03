@@ -1,11 +1,119 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>嗨</title>
+    <style>
+        /* 设置 body 为 Flexbox 容器 */
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            height: 100vh; /* 使 body 高度适应视口 */
+            overflow-y: scroll; /* 允许垂直滚动 */
+        }
+
+        /* 设置头部文本的样式 */
+        .header {
+            text-align: center;
+            font-size: 80px; /* 增加字体大小 */
+            margin: 20px 0;
+            background: linear-gradient(45deg, #6f6f6f, #353535); /* 添加渐变背景 */
+            color: #ffffff; /* 设置文字颜色为白色 */
+            padding: 30px;
+            border-radius: 15px; /* 添加圆角 */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* 添加阴影 */
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.8); /* 添加文字阴影 */
+            font-family: 'Arial', cursive; /* 使用手写草写字型 */
+            position: relative;
+            z-index: 1; /* 确保标题在最上层 */
+        }
+
+        /* 设置 logo 的样式 */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 设置导航栏的样式 */
+        .nav {
+            width: 100%;
+            height: auto;
+            background-color: #333;
+            margin-top: 20px;
+            padding: 10px 0;
+            text-align: center; /* 使导航栏内容居中 */
+        }
+
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        /* 设置 iframe 的样式 */
+        .iframe-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1; /* 使 iframe 容器占据剩余空间 */
+            padding: 20px; /* 添加内边距 */
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 800px; /* 设置最大宽度 */
+            height: 600px; /* 设置固定高度 */
+            border: none;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>賓士</h1>
-    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ddRbmohRX5DiUZDyoAr2NZLqZuuXQ1yXyWm2Kr8TSdM91WHpgZcDbwPpSFo8bAiml%26id%3D100069021783130&show_text=true&width=500" width="500" height="734" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    <!-- <img src="C:\Users\ASUS\Desktop\電池.png" class="logo" alt="Logo"> -->
+    <p class="header">湯淺電池</p>
+    <div class="nav">
+        <ul>
+            <li><a href="change.html">更換紀錄</a></li>
+            <li><a href="index.html">主葉</a></li>
+
+        </ul>
+    </div>
+    <div class="iframe-container">
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02ddRbmohRX5DiUZDyoAr2NZLqZuuXQ1yXyWm2Kr8TSdM91WHpgZcDbwPpSFo8bAiml%26id%3D100069021783130&show_text=true&width=500" scrolling="no"></iframe><br/>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02rDw56PgJjtB18P1PaJZa9QN4t3SsaeKx1hR14udW52Pi7kD3TZJC8wQTPH9cmdu9l%26id%3D100069021783130&show_text=true&width=500" scrolling="no"></iframe>
+    </div>
 </body>
+
 </html>

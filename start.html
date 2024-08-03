@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>登入頁面</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>登入頁面</h2>
+        <input type="text" id="username" placeholder="請輸入帳號" /><br />
+        <input type="password" id="password" placeholder="請輸入密碼" /><br />
+        <button onclick="checkCredentials()">登入</button>
+        <p id="error-message" class="error"></p>
+    </div>
+
+    <script>
+        function checkCredentials() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (username === 'root' && password === 'abccc') {
+                window.location.href = 'index.html'; // 如果正確，跳轉到 index.html
+            } else {
+                errorMessage.textContent = '帳號或密碼錯誤'; // 顯示錯誤信息
+            }
+        }
+    </script>
+</body>
+
+</html>
+

@@ -1,41 +1,118 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>About Us - PlusFuji</title>
+    <title>湯淺電池</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
+
+        /* Container for centering the content */
         .container {
-            width: 80%;
-            margin: auto;
+            text-align: center;
+            position: relative;
         }
-        header {
-            background: lightblue;
+
+        /* Header with cool effect */
+        .header {
+            font-size: 80px;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #f9ca24);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+            animation: textAnimation 4s infinite;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        @keyframes textAnimation {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-20px);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Optional: Style for logo if you have one */
+        .logo {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Optional: Style for navigation if you have one */
+        .nav {
+            background-color: #333;
             padding: 10px 0;
-        }
-        header h1 {
-            margin: 0;
             text-align: center;
         }
-        .content {
-            padding: 20px;
+
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #555;
+            color: #fff;
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>About Us</h1>
-        </div>
-    </header>
-    <div class="container content">
-        <h2>Welcome to PlusFuji</h2>
-        <p>PlusFuji is dedicated to providing high-quality services and solutions. Our team is committed to excellence and customer satisfaction.</p>
-        <!-- Additional content from the original page would go here -->
+    <div class="container">
+        <header>
+            <div class="header">湯淺電池</div>
+        </header>
+        <!-- Optional: Place your logo here -->
+        <!-- <img src="path/to/logo.png" class="logo" alt="Logo"> -->
+        <!-- Optional: Add navigation -->
+        <!-- <div class="nav">
+            <ul>
+                <li><a href="#">關於我們</a></li>
+                <li><a href="#">主要服務</a></li>
+                <li><a href="change.html">更換紀錄</a></li>
+            </ul>
+        </div> -->
     </div>
 </body>
+
 </html>

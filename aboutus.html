@@ -13,10 +13,8 @@
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
-            overflow-x: hidden;
-            /* 隐藏横向滚动条 */
-            min-height: 100vh;
-            /* 确保 body 的最小高度为视口高度 */
+            overflow: hidden;
+            /* 确保没有滚动条 */
         }
 
         /* 设置头部文本的样式 */
@@ -69,6 +67,8 @@
             padding: 10px 0;
             text-align: center;
             /* 使导航栏内容居中 */
+            margin: auto;
+            /* 确保导航内容不会被 logo 遮挡 */
             box-sizing: border-box;
             /* 确保 padding 不会影响布局 */
             z-index: 0;
@@ -100,66 +100,19 @@
             background-color: #555;
             color: #fff;
         }
-
-        /* 设置 banner 的样式 */
-        .banner {
-            width: 100%;
-            /* 确保 banner 区域宽度为 100% */
-            margin: 0;
-            /* 去掉 margin 确保满版效果 */
-            padding: 0;
-            /* 去掉 padding */
-            box-sizing: border-box;
-        }
-
-        .banner img {
-            width: 100%;
-            /* 使图片宽度适应 banner 的宽度 */
-            height: auto;
-            /* 保持图片纵横比 */
-            display: block;
-            /* 去掉图片底部的间距 */
-            border-radius: 0;
-            /* 去掉图片圆角 */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        /* 添加一些额外内容以确保页面足够长 */
-        .content {
-            padding: 20px;
-            /* 添加内边距 */
-            text-align: center;
-        }
-
-        .content p {
-            font-size: 24px;
-            margin: 20px 0;
-        }
     </style>
 </head>
 
 <body>
     <p class="header">湯淺電池</p>
-    <img src="C:\Users\ASUS\Desktop\YUASA.jpg" class="logo" alt="Logo">
-
     <div class="nav">
         <ul>
             <li><a href="aboutus.html">關於我們</a></li>
-            <li><a href="index.html">主要服務</a></li>
-            <li><a href="change.html">更換紀錄</a></li>
+          
         </ul>
+       
     </div>
-
-    <div class="banner">
-        <img src="C:\Users\ASUS\Desktop\VARTA.png" alt="Banner">
-    </div>
-
-    <!-- 添加额外内容 -->
-    <div class="content">
-        <p>這是一個示範內容區，請向下滑動查看更多內容。</p>
-        <p>這裡可以添加更多內容以確保頁面足夠長。</p>
-        <p>例如，您可以在這裡添加文章、圖片或其他元素。</p>
-    </div>
+    <p>我是</p>
 </body>
 
 </html>

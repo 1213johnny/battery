@@ -27,7 +27,7 @@
         input[type="date"] {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
+            margin: 10px -10px;
             border: 1px solid #ddd;
             border-radius: 4px;
         }
@@ -55,7 +55,7 @@
 
 <body>
     <div class="login-container">
-        <h2>登入頁面</h2>
+        <h2>會員登入</h2>
         <input type="text" id="username" placeholder="請輸入帳號" /><br />
         <input type="password" id="password" placeholder="請輸入密碼" /><br />
         <button onclick="checkCredentials()">登入</button>
@@ -69,7 +69,7 @@
             const errorMessage = document.getElementById('error-message');
 
             if (username === 'root' && password === 'abccc') {
-                window.location.href = 'index.html'; // 如果正確，跳轉到 index.html
+                window.location.href = 'user.html'; // 如果正確，跳轉到 index.html
             } else {
                 errorMessage.textContent = '帳號或密碼錯誤'; // 顯示錯誤信息
             }

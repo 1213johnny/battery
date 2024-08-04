@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表格管理</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .button {
+            margin: 5px;
+        }
+    </style>
+    <script>
+        function loadRecords() {
+            // 清空表格
+            var table = document.getElementById("dataTable");
+            table.getElementsByTagName("tbody")[0].innerHTML = "";
+
+            // 從 localStorage 讀取記錄
+            var records = JSON.parse(localStorage.getItem("records")) || [];
+            
+            // 添加記錄到表格
+            records.forEach(function(record) {
+                addRowToTable(record);
+            });
+        }
+
+        function addRowToTable(record) {
+            var table = document.getElementById("dataTable");
+            var newRow = table.insertRow();
+            
+            newRow.insertCell(0).innerHTML = record.name;
+            newRow.insertCell(1).innerHTML = record.phone;
+            newRow.insertCell(2).innerHTML = record.date;
+            newRow.insertCell(3).innerHTML = record.carModel;
+            var deleteCell = newRow.insertCell(4);
+            deleteCell.innerHTML = '<button class="button" onclick="deleteRecord(this)">刪除</button>';
+        }
+
+        function addRecord() {
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var date = document.getElementById("date").value;
+            var carModel = document.getElementById("carModel").value;
+            
+            if (name === "" || phone === "" || date === "" || carModel === "") {
+                alert("請填寫所有欄位！");
+                return;
+            }
+
+            var records = JSON.parse(localStorage.getItem("records")) || [];
+            var newRecord = { name: name, phone: phone, date: date, carModel: carModel };
+            records.push(newRecord);
+            localStorage.setItem("records", JSON.stringify(records));
+
+            addRowToTable(newRecord);
+
+            document.getElementById("dataForm").reset();
+        }
+
+        function deleteRecord(button) {
+            var row = button.parentNode.parentNode;
+            var table = document.getElementById("dataTable");
+            var index = row.rowIndex - 1;  // 表格中 index 是從 1 開始的
+            
+            var records = JSON.parse(localStorage.getItem("records")) || [];
+            records.splice(index, 1);
+            localStorage.setItem("records", JSON.stringify(records));
+            
+            row.parentNode.removeChild(row);
+        }
+
+        function searchRecords() {
+            var searchValue = document.getElementById("searchInput").value.toLowerCase();
+            var table = document.getElementById("dataTable");
+            var rows = table.getElementsByTagName("tr");
+
+            for (var i = 1; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName("td");
+                var found = false;
+
+                for (var j = 0; j < cells.length - 1; j++) {
+                    if (cells[j].innerText.toLowerCase().indexOf(searchValue) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+
+        window.onload = loadRecords;
+    </script>
+</head>
+<body>
+    <h1>資料管理</h1>
+    
+    <!-- 表單 -->
+    <form id="dataForm">
+        <label for="name">姓名:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="phone">電話:</label>
+        <input type="text" id="phone" name="phone" required>
+        <br><br>
+        <label for="date">日期:</label>
+        <input type="date" id="date" name="date" required>
+        <br><br>
+        <label for="carModel">車子款式:</label>
+        <input type="text" id="carModel" name="carModel" required>
+        <br><br>
+        <input type="button" class="button" value="新增" onclick="addRecord()">
+    </form>
+
+    <h2>查詢</h2>
+    <input type="text" id="searchInput" onkeyup="searchRecords()" placeholder="搜尋...">
+    
+    <h2>資料表格</h2>
+    <!-- 表格 -->
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>電話</th>
+                <th>日期</th>
+                <th>車子款式</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 新記錄將會在這裡添加 -->
+        </tbody>
+    </table>
+</body>
+</html>

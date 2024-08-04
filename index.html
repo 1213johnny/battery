@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 
 <head>
     <meta charset="UTF-8">
-    <title>嗨</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湯淺電池 桃園青埔店</title>
     <style>
         /* 设置 body 为 Flexbox 容器 */
         body {
@@ -14,65 +15,47 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
             overflow-x: hidden;
-            /* 隐藏横向滚动条 */
             min-height: 100vh;
-            /* 确保 body 的最小高度为视口高度 */
         }
 
         /* 设置头部文本的样式 */
         .header {
             text-align: center;
-            font-size: 80px;
-            /* 增加字体大小 */
-            margin: 20px 0;
-            background: linear-gradient(45deg, #6f6f6f, #353535);
-            /* 添加渐变背景 */
+
+            margin: 0;
+            background: linear-gradient(45deg, black, black);
+            /* background: linear-gradient(45deg, #6f6f6f, #353535); */
             color: #ffffff;
-            /* 设置文字颜色为白色 */
-            padding: 30px;
-            border-radius: 15px;
-            /* 添加圆角 */
+            padding: 10px;
+            border-radius:0;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            /* 添加阴影 */
             text-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-            /* 添加文字阴影 */
             font-family: 'Dancing Script', cursive;
-            /* 使用手写草写字型 */
             position: relative;
             z-index: 1;
-            /* 确保标题在最上层 */
         }
 
         /* 设置 logo 的样式 */
         .logo {
-            position: fixed;
-            /* 将 logo 固定在页面左边 */
-            top: 20px;
-            left: 20px;
-            width: 229px;
-            /* 增大图片宽度 */
+            position: relative;
+           
+            /* top: 10px; */
+            
+            width: 210px;
             height: auto;
-            /* 保持图片纵横比 */
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            /* 确保图片在最上层 */
+            z-index: 3;
         }
 
         /* 设置导航栏的样式 */
         .nav {
             width: 100%;
-            /* 减去图片宽度和间距 */
-            height: auto;
             background-color: #333;
-            margin-top: 20px;
             padding: 10px 0;
             text-align: center;
-            /* 使导航栏内容居中 */
             box-sizing: border-box;
-            /* 确保 padding 不会影响布局 */
             z-index: 0;
-            /* 确保导航栏在图片下面 */
         }
 
         .nav ul {
@@ -104,44 +87,108 @@
         /* 设置 banner 的样式 */
         .banner {
             width: 100%;
-            /* 确保 banner 区域宽度为 100% */
             margin: 0;
-            /* 去掉 margin 确保满版效果 */
             padding: 0;
-            /* 去掉 padding */
-            box-sizing: border-box;
+            /* box-sizing: border-box; */
         }
 
         .banner img {
             width: 100%;
-            /* 使图片宽度适应 banner 的宽度 */
             height: auto;
-            /* 保持图片纵横比 */
             display: block;
-            /* 去掉图片底部的间距 */
+            border-radius: 0%;
+            /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+        }
+
+        /* 关于湯淺电池的图片样式 */
+        .aboutyuasa {
+            text-align: center;
+            display: block;
             border-radius: 0;
-            /* 去掉图片圆角 */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
         }
 
         /* 添加一些额外内容以确保页面足够长 */
         .content {
+            display: flex;
+            width: 100%;
             padding: 20px;
-            /* 添加内边距 */
             text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            height: 100%;
+            border-radius: 10px;
+            background-color: #ffffff;
         }
 
         .content p {
             font-size: 24px;
-            margin: 20px 0;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            border-radius: 8px;
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+            width: 100%;
+            
+        }
+
+        /* 设置每个区块的样式 */
+        .left,
+        .center,
+        .right {
+            flex: 20;
+            padding: 10px;
+
+        }
+
+        /* 设置中心区块的宽度 */
+
+        .center img {
+
+            border-radius: 50%;
+            /* 设置圆形 */
+
+        }
+
+        footer p {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
-    <p class="header">湯淺電池</p>
-    <img src="/YUASA.jpg" class="logo" alt="Logo">
 
+    <div class="header">
+        <img class="logo" src="../images/YUASA.jpg">
+
+        <img src="../images/storename.png">
+        <a href="start.html" >登入</a>
+    </div>
     <div class="nav">
         <ul>
             <li><a href="aboutus.html">關於我們</a></li>
@@ -150,16 +197,38 @@
         </ul>
     </div>
 
-    <div class="banner">
-        <img src="images/VARTA.png" alt="Banner">
-    </div>
+   
 
-    <!-- 添加额外内容 -->
-    <div class="content">
-        <p>這是一個示範內容區，請向下滑動查看更多內容。</p>
-        <p>這裡可以添加更多內容以確保頁面足夠長。</p>
-        <p>例如，您可以在這裡添加文章、圖片或其他元素。</p>
+    <div class="container">
+        <div class="left">
+            <div class="content">
+                <p>歡迎光臨 湯淺電池 桃園青埔店！</p>
+                <p>我們是湯淺電池品牌在桃園青埔區的惡霸，</p>
+                <p>壟斷並提供高品質的電池產品和專業的服務。</p>
+            </div>
+        </div>
+        <div class="center">
+            <div class="aboutyuasa">
+                <img src="../images/YUASAcool.png" alt="About Yuasa">
+            </div>
+        </div>
+        <div class="right">
+            <div class="content">
+                <p>作為電池行業的領先者，</p>
+                <p>我們擁有多年的經驗，</p>
+                <p>致力於為您提供高品質的電池產品和專業的服務。</p>
+            </div>
+        </div>
     </div>
+    <div class="banner">
+        <img src="../images/VARTA.png" alt="Banner">
+    </div>
+    <footer>
+        <p>聯絡電話: (03) 1234-5678</p>
+        <p>地址: 桃園市青埔區某某路123號</p>
+        <p>電子郵件: <a href="mailto:info@example.com">info@example.com</a></p>
+        <p>&copy; 2024 湯淺電池 桃園青埔店</p>
+    </footer>
 </body>
 
 </html>
